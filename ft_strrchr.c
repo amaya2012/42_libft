@@ -24,22 +24,21 @@ static size_t	ft_strlen(const char *s)
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	size_t	len_s;
-	char	*s1;
 
-	i = 0;
-	s1 = (char *)s;
 	len_s = ft_strlen(s);
+	if (s[len_s] == (char)c)
+		return ((char *)&s[len_s]);
 	while (len_s--)
 	{
-		if (s1[len_s] == c)
-			return (&s1[len_s]);
+		if (s[len_s] == (char)c)
+			return ((char *)&s[len_s]);
 	}
-	return (0);
+	return (NULL);
 }
 
 // #include <stdio.h>
+
 // int	main(void)
 // {
 // 	char str[] = "Hello1354e6";

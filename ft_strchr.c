@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
 	char	*s1;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	s1 = (char *)s;
 	while (s1[i] >= 0)
@@ -31,5 +35,5 @@ char	*ft_strchr(const char *s, int c)
 // {
 // 	char str[] = "Hello13546";
 
-// 	printf("%s\n", ft_strchr(str, '0'));
+// 	printf("%s\n", ft_strchr(str, '\0'));
 // }

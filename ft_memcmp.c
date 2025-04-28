@@ -26,7 +26,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return ((int)(uc_s1[i] - uc_s2[i]));
 }
 
-// #include <stdio.h>
+//#include <stdio.h>
 // int	main(void)
 // {
 //     printf("%d\n", memcmp("Hello13546","Hello813546" , 6));

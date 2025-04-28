@@ -18,8 +18,11 @@ static size_t	ft_strlen(const char *s)
 	size_t	l;
 
 	l = 0;
-	while (s[l])
-		l++;
+	if (s)
+	{
+		while (s[l])
+			l++;
+	}
 	return (l);
 }
 
@@ -31,7 +34,7 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	s_len = ft_strlen(s);
-	dup = (char *)malloc(s_len);
+	dup = (char *)malloc(s_len + 1);
 	if (!dup)
 		return (NULL);
 	while (s[i])

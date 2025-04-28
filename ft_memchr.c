@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	uc_s = (unsigned char *)s;
 	i = 0;
-	while (uc_s[i] >= 0 && i < n)
+	while (i < n)
 	{
 		if (uc_s[i] == (unsigned char)c)
 		{
@@ -34,7 +34,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char str[] = "ello1354H6";
+// 	char str[] = "ello";
 
-// 	printf("%s\n", (char *) ft_memchr(str, 'H', 2));
+// 	printf("%s\n", (char *) ft_memchr(str, 'u', 40));
 // }

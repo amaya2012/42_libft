@@ -10,23 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isupper(char c)
+int	ft_isalpha(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
-static int	ft_islower(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
-
-int	ft_isalpha(char c)
-{
-	if (ft_isupper(c) || ft_islower(c))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

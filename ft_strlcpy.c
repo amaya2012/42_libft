@@ -15,22 +15,30 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 {
 	size_t	i;
+	size_t	src_len;
 
 	i = 0;
-	while ((src[i]) && (i < siz))
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	while (src[i] && i < (siz - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (i);
+	if (siz > 0)
+		dst[i] = '\0';
+	return (src_len);
 }
 
+// if (siz > 0) necessaire sinon si siz=0 renvoie chaine vide au lieu de dst
 // #include <stdio.h>
 
 // int main()
 // {
-//     char dst[5] = "test";
-//     printf("%d\n", ft_strlcpy(dst, "srccd", 12));
+//     char dst[5] = " ";
+//    	//printf("%zu\n", ft_strlcpy(dst, "lalaala", 5));
+// 	printf("%zu\n", strlcpy(dst, "lalaala", 5));
+
 //     printf("%s\n", dst);
 // }

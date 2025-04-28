@@ -12,39 +12,32 @@
 
 #include <string.h>
 
-static size_t	ft_strlen(const char *str)
-{
-	size_t	l;
-
-	l = 0;
-	while (str[l])
-		l++;
-	return (l);
-}
-
 void	*ft_memmove(void *destination, const void *source, size_t size)
 {
 	char		*d;
 	const char	*s;
-	int			s_len;
 
 	if (!destination || !source)
 		return (NULL);
 	d = (char *)destination;
 	s = (const char *)source;
-	s_len = ft_strlen(s) - 1;
-	d[s_len] = '\0';
-	while (s_len >= 0 && d[s_len] && size >= 0)
+	if (d < s)
 	{
-		d[s_len] = s[size];
-		s_len--;
-		size--;
+		while (size--)
+			*(d++) = *(s++);
+	}
+	else
+	{
+		d += size;
+		s += size;
+		while (size--)
+			*(--d) = *(--s);
 	}
 	return ((void *)d);
 }
 
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
 // int	main(void)
 // {
