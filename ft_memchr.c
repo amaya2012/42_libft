@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:25:57 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 09:53:59 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 15:03:21 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*uc_s;
-	void			*out;
 	size_t			i;
 
 	uc_s = (unsigned char *)s;

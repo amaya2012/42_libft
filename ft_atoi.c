@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:07:28 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/24 15:24:41 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 16:45:57 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ int	ft_atoi(const char *nptr)
 	neg = 1;
 	while (nptr[i] == ' ' || (nptr[i] > 8 && nptr[i] < 14))
 		i++;
-	if (nptr[i] == '-')
-		neg = -1;
-	i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			neg = -1;
+		i++;
+	}
 	while (nptr[i] && (nptr[i] >= '0' && nptr[i] <= '9'))
 	{
 		nb = nb * 10 + (nptr[i] - '0');
@@ -37,6 +40,6 @@ int	ft_atoi(const char *nptr)
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_atoi(" \n   - 123"));
-// 	printf("%d\n", atoi(" \n  - 123"));
+// 	printf("%d\n", ft_atoi(" \n   -123"));
+// 	printf("%d\n", atoi(" \n  -123"));
 // }

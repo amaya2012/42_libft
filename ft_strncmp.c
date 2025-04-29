@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:11:14 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 12:29:04 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 15:03:48 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	if (!s1 || !s2)
 		return (0);

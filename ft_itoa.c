@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:14:07 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 12:18:59 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 15:03:06 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
 static int	ft_len_nb(long nb)
 {
