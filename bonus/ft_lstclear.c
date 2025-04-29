@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:02:23 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 11:31:25 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:51:15 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ typedef struct s_list
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp_current;
-	t_list *tmp_next;
+	t_list	*tmp_current;
+	t_list	*tmp_next;
 
 	if (!lst || !*lst || !del)
 		return ;

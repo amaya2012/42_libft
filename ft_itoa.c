@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/29 12:14:07 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/29 12:18:59 by amweyer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 
 static int	ft_len_nb(long nb)
 {
@@ -13,6 +24,7 @@ static int	ft_len_nb(long nb)
 	}
 	return (len);
 }
+
 char	*ft_itoa(int n)
 {
 	long	nb;

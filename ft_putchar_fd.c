@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:59:35 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 12:29:46 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:48:15 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd == -1)
-		return;
+		return ;
 	write(fd, &c, 1);
 }

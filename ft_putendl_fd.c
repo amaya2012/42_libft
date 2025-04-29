@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 12:19:53 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 12:28:23 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:48:31 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	len;
 
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	len = 0;
 	while (s[len])
 		len++;

@@ -6,12 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:13 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/24 13:30:36 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:49:04 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// #include <stdio.h>
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {

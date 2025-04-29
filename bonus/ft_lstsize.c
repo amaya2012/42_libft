@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:54:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 10:16:22 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:50:24 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_list
 
 int	ft_lstsize(t_list *lst)
 {
-	int nb;
+	int	nb;
 
 	nb = 0;
 	while (lst)

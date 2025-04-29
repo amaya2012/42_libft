@@ -6,26 +6,32 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 12:30:45 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 12:43:58 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:42:17 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-// static char *itoa(int)
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+	char	c;
+
+	nb = n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	c = nb % 10 + '0';
+	if (nb / 10 > 0)
+		ft_putnbr_fd(nb / 10, fd);
+	write(fd, &c, 1);
+}
+
+// int	main(void)
 // {
-
+// 	ft_putnbr_fd(-2147483648, 1);
 // }
-
-// void ft_putnbr_fd(int n, int fd)
-// {
-//     int	len;
-//     char *nb;
-
-//     nb = itoa(n);
-//     len = 0;
-//     while (nb[len])
-//         len++;
-//     write(fd, nb, len);
-// }
-
-

@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:57:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 11:06:09 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 13:47:46 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	return ((void *)d);
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
 // int	main(void)
 // {
