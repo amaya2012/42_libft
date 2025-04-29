@@ -6,12 +6,10 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 12:30:45 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 13:42:17 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 14:30:46 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
