@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 14:07:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 14:30:55 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 10:43:14 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ typedef struct s_list
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
-		return (NULL);
-	while (lst)
+	t_list	*tmp;
+
+	if (!new)
+		return ;
+	if (*lst == NULL)
 	{
-		if ((*lst)->next == NULL)
-		{
-			(*lst)->next = new;
-		}
-		else
-			lst = (*lst)->next;
+		*lst = new;
+		return ;
 	}
-	return (NULL);
+	tmp = *lst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new;
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 14:04:06 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 14:18:26 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 10:20:48 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@ typedef struct s_list
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
+	while (lst && (lst->next))
 		lst = lst->next;
-	}
-	return (NULL);
+	return (lst);
 }

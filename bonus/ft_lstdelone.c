@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 14:19:31 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 14:31:08 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 10:57:22 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ typedef struct s_list
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
-	free(lst);
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:54:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 14:33:05 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/29 10:16:22 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_lstsize(t_list *lst)
 	nb = 0;
 	while (lst)
 	{
-		nb++;
 		lst = lst->next;
+		nb++;
 	}
 	return (nb);
 }
