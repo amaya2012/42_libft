@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:20:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 14:08:52 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 18:07:13 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <string.h>
 
 typedef struct s_list
 {

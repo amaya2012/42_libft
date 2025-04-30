@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:57:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 13:47:46 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 17:40:44 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	char		*d;
 	const char	*s;
 
-	if (!destination || !source)
-		return (NULL);
+	// if (!destination || !source)
+	// 	return (NULL);
 	d = (char *)destination;
 	s = (const char *)source;
 	if (d < s)

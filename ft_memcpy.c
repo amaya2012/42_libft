@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:32:24 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 09:48:49 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 17:02:50 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
+	if (!dest && !src)
+		return ((void *) NULL);
 	d = (char *)dest;
 	s = (const char *)src;
 	i = 0;
