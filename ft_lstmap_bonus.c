@@ -6,65 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:19:29 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 10:19:35 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 14:08:32 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-static t_list	*ft_lstnew(void *content)
-{
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
-
-static void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*tmp;
-
-	if (!new)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	tmp = *lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = new;
-	return ;
-}
-
-static void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*tmp_current;
-	t_list	*tmp_next;
-
-	if (!lst || !*lst || !del)
-		return ;
-	tmp_current = *lst;
-	while (tmp_current)
-	{
-		tmp_next = tmp_current->next;
-		del(tmp_current->content);
-		free(tmp_current);
-		tmp_current = tmp_next;
-	}
-	*lst = NULL;
-}
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -88,3 +34,67 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (lst_dup);
 }
+
+//--------------------------------TEST ---------------------------
+
+// #include <stdio.h>
+
+// void	del(void *content)
+// {
+// 	free(content);
+// }
+
+// void	*f(void *val)
+// {
+// 	int	*v;
+// 	int *tmp;
+
+// 	v = (int *)val;
+
+// 	tmp = malloc(sizeof(int));
+// 	*tmp = *v + 1;
+// 	return((void *)tmp);
+// }
+
+// int	main(void)
+// {
+// 	int		*a;
+// 	int		*b;
+// 	int		*c;
+// 	t_list	*node;
+// 	t_list	*firts;
+// 	t_list	*second;
+// 	t_list	*dup;
+
+// 	a = malloc(sizeof(int));
+// 	b = malloc(sizeof(int));
+// 	c = malloc(sizeof(int));
+// 	if (!a || !b || !c)
+// 		return (1);
+// 	*a = 42;
+// 	*b = 43;
+// 	*c = 44;
+// 	node = ft_lstnew(a);
+// 	firts = ft_lstnew(b);
+// 	second = ft_lstnew(c);
+// 	ft_lstadd_front(&node, firts);
+// 	ft_lstadd_front(&node, second);
+// 	if (!node)
+// 	{
+// 		free(a);
+// 		free(b);
+// 		free(c);
+// 		return (1);
+// 	}
+
+// 	dup = ft_lstmap(node,f,del);
+// 	printf("---------NODE---------\n");
+// 	printf("1er element: %d\n", *(int*)node->content);
+// 	printf("2er element: %d\n", *(int*)node->next->content);
+// 	printf("3er element: %d\n", *(int*)node->next->next->content);
+
+// 	printf("\n---------DUP---------\n");
+// 	printf("1er element: %d\n", *(int*)dup->content);
+// 	printf("2er element: %d\n", *(int*)dup->next->content);
+// 	printf("3er element: %d\n", *(int*)dup->next->next->content);
+// }

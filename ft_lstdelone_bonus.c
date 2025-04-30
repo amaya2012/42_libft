@@ -6,17 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:17:23 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 10:17:31 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 12:07:37 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -26,3 +20,34 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
+
+//--------------------------------TEST ---------------------------
+
+// #include <stdio.h>
+
+// void del(void *content)
+// {
+//     free(content);
+// }
+
+// int	main(void)
+// {
+
+//     int *a = malloc(sizeof(int));
+//     if (!a)
+//         return (1);
+
+//     *a = 42;
+//     t_list *node = ft_lstnew(a);
+//     if (!node)
+//     {
+//         free(a);
+//         return (1);
+//     }
+
+//     printf("Avant suppression : %d\n", *(int *)node->content);
+//     ft_lstdelone(node, del);  // Supprimer le nœud
+//     printf("Apres suppression : %d\n", *(int *)node->content);
+
+// 	return (0);
+// }

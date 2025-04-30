@@ -6,17 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:20:51 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 10:21:03 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/04/30 11:20:21 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
@@ -30,3 +24,27 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (nb);
 }
+
+//--------------------------------TEST ---------------------------
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int a = 3;
+// 	int b = 5;
+// 	int c = 8;
+
+// 	t_list *head = ft_lstnew(&a);
+// 	printf("lst size: %d\n", ft_lstsize(head)); // 1
+
+// 	t_list *firts = ft_lstnew(&b);
+// 	t_list *second = ft_lstnew(&c);
+
+// 	ft_lstadd_front(&head, firts);
+// 	printf("lst size: %d\n", ft_lstsize(head)); // 2
+
+// 	ft_lstadd_front(&head, second);
+// 	printf("lst size: %d\n", ft_lstsize(head)); // 3
+// 	return (0);
+// }
