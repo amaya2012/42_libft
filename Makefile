@@ -6,7 +6,7 @@
 #    By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 13:09:41 by amweyer           #+#    #+#              #
-#    Updated: 2025/04/29 16:44:11 by amweyer          ###   ########.fr        #
+#    Updated: 2025/04/30 10:24:57 by amweyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,21 +45,19 @@ SRC = 	ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c\
 
+
+BONUS_SRC = 	ft_lstadd_back_bonus.c\
+				ft_lstadd_front_bonus.c\
+				ft_lstclear_bonus.c\
+				ft_lstdelone_bonus.c\
+				ft_lstiter_bonus.c\
+				ft_lstlast_bonus.c\
+				ft_lstmap_bonus.c\
+				ft_lstnew_bonus.c\
+				ft_lstsize_bonus.c\
+
+
 OBJS := $(SRC:%.c=%.o)
-
-BONUS_SRC = $(addprefix bonus/, $(addsuffix _bonus.c, \
-				ft_lstadd_back\
-				ft_lstadd_front\
-				ft_lstclear\
-				ft_lstdelone\
-				ft_lstiter\
-				ft_lstlast\
-				ft_lstmap\
-				ft_lstnew\
-				ft_lstsize))
-
-
-
 
 BONUS_OBJS := $(BONUS_SRC:%.c=%.o)
 
@@ -78,12 +76,8 @@ $(NAME): $(OBJS)
 %.o: %.c
 	${CC} ${CCFLAGS} -c $< -o $@
 
-bonus/%.o: bonus/%.c
-	${CC} ${CCFLAGS} -c $< -o $@
-
-
-bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS) $(OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 
 clean :
 	rm -f $(OBJS) $(BONUS_OBJS)

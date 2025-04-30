@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 11:02:23 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 13:51:15 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/30 10:18:04 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:18:12 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp_current;
-	t_list	*tmp_next;
-
-	if (!lst || !*lst || !del)
-		return ;
-	tmp_current = *lst;
-	while (tmp_current)
+	while (lst)
 	{
-		tmp_next = tmp_current->next;
-		del(tmp_current->content);
-		free(tmp_current);
-		tmp_current = tmp_next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	*lst = NULL;
 }

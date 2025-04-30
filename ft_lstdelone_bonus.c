@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:34 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 10:15:27 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/30 10:17:23 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:17:31 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

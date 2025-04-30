@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:54:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 13:50:24 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/28 14:07:50 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:14:53 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,20 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	nb;
+	t_list	*tmp;
 
-	nb = 0;
-	while (lst)
+	if (!new)
+		return ;
+	if (*lst == NULL)
 	{
-		lst = lst->next;
-		nb++;
+		*lst = new;
+		return ;
 	}
-	return (nb);
+	tmp = *lst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new;
+	return ;
 }

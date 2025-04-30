@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 14:36:15 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 15:02:48 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/30 10:18:50 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:18:59 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst)
-	{
-		f(lst->content);
+	while (lst && (lst->next))
 		lst = lst->next;
-	}
+	return (lst);
 }

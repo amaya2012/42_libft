@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 14:19:31 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 10:57:22 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/30 10:20:51 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:21:03 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	if (lst && del)
+	int	nb;
+
+	nb = 0;
+	while (lst)
 	{
-		del(lst->content);
-		free(lst);
+		lst = lst->next;
+		nb++;
 	}
+	return (nb);
 }

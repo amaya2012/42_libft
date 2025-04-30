@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amweyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 14:07:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 10:43:14 by amweyer          ###   ########.fr       */
+/*   Created: 2025/04/30 10:15:31 by amweyer           #+#    #+#             */
+/*   Updated: 2025/04/30 10:15:33 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdlib.h>
 
@@ -18,20 +19,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
-
 	if (!new)
 		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	tmp = *lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = new;
-	return ;
+	new->next = *lst;
+	*lst = new;
 }
