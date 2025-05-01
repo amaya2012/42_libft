@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:57:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/05/01 13:51:44 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:54 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,4 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 // 	printf("-----------------------------\n");
 // 	printf("%s\n", memmove(((void*)0), ((void*)0), 5));
 // 	printf("%s\n", ft_memmove(((void*)0), ((void*)0), 5));
-
 // }
