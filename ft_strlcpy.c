@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:12:00 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 15:33:28 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:52:37 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 {

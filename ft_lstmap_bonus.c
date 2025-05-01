@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:19:29 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 14:08:32 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:46:15 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*lst_dup;
 	t_list	*new;
+	t_list	*f_lst;
 
 	lst_dup = NULL;
-	new = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)
 	{
-		new = ft_lstnew(f(lst->content));
+		f_lst = f(lst->content);
+		new = ft_lstnew(f_lst);
 		if (!new)
 		{
+			del(f_lst);
 			ft_lstclear(&lst_dup, del);
 			return (NULL);
 		}
@@ -47,13 +49,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // void	*f(void *val)
 // {
 // 	int	*v;
-// 	int *tmp;
+// 	int	*tmp;
 
 // 	v = (int *)val;
-
 // 	tmp = malloc(sizeof(int));
 // 	*tmp = *v + 1;
-// 	return((void *)tmp);
+// 	return ((void *)tmp);
 // }
 
 // int	main(void)
@@ -86,15 +87,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 		free(c);
 // 		return (1);
 // 	}
-
-// 	dup = ft_lstmap(node,f,del);
+// 	dup = ft_lstmap(node, f, del);
 // 	printf("---------NODE---------\n");
-// 	printf("1er element: %d\n", *(int*)node->content);
-// 	printf("2er element: %d\n", *(int*)node->next->content);
-// 	printf("3er element: %d\n", *(int*)node->next->next->content);
-
+// 	printf("1er element: %d\n", *(int *)node->content);
+// 	printf("2er element: %d\n", *(int *)node->next->content);
+// 	printf("3er element: %d\n", *(int *)node->next->next->content);
 // 	printf("\n---------DUP---------\n");
-// 	printf("1er element: %d\n", *(int*)dup->content);
-// 	printf("2er element: %d\n", *(int*)dup->next->content);
-// 	printf("3er element: %d\n", *(int*)dup->next->next->content);
+// 	printf("1er element: %d\n", *(int *)dup->content);
+// 	printf("2er element: %d\n", *(int *)dup->next->content);
+// 	printf("3er element: %d\n", *(int *)dup->next->next->content);
 // }

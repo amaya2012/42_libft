@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:20:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/05/01 13:09:57 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:55:04 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

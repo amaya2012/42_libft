@@ -6,9 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:23:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/22 16:42:29 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:54:27 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isupper(char c)
 {

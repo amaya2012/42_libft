@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:52:28 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/24 14:10:33 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:52:42 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

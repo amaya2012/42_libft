@@ -6,25 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:39:22 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 12:28:48 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:52:09 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	l;
-
-	l = 0;
-	if (s)
-	{
-		while (s[l])
-			l++;
-	}
-	return (l);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

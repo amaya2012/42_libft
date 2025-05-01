@@ -6,20 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:25:48 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/28 11:43:59 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:52:56 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-// #include <stdio.h>
-
-// char test(unsigned int i , char c)
-// {
-//     if(i%2 == 0)
-//         c='A';
-//     return(c);
-// }
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

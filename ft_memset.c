@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:45:56 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 14:25:04 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 14:51:21 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
