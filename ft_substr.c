@@ -6,20 +6,21 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:45:56 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 18:36:43 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:24:59 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t	ft_strlen(const char *s)
+static char	*ft_empty_string(void)
 {
-	size_t	i;
+	char	*out;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	out = malloc(1);
+	if (!out)
+		return (NULL);
+	out[0] = '\0';
+	return (out);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -32,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return ("");
+		return (ft_empty_string());
 	if (len > s_len - start)
 		len = s_len - start;
 	i = 0;
@@ -48,12 +49,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (out);
 }
 
-
 // #include <stdio.h>
 // #include <unistd.h>
 // int	main(void)
 // {
-	
 
 // 	printf("%s\n", ft_substr("", 0, 0));
 // 	printf("-----------------------------");
@@ -67,5 +66,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	printf("-----------------------------");
 
 // 	printf("%s\n", ft_substr("hola", 5, 2));
+// 	printf("-----------------------------");
+
+// 	printf("%s\n", ft_substr("", 0, 0));
+// 	printf("-----------------------------");
 
 // }

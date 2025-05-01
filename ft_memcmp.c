@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:39:39 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 17:02:30 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:12:07 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

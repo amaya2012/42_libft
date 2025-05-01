@@ -6,19 +6,21 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:57:50 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 17:40:44 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:51:44 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *destination, const void *source, size_t size)
 {
 	char		*d;
 	const char	*s;
+	void		*origin_d;
 
-	// if (!destination || !source)
-	// 	return (NULL);
+	if (!destination && !source)
+		return (NULL);
+	origin_d = destination;
 	d = (char *)destination;
 	s = (const char *)source;
 	if (d < s)
@@ -30,10 +32,10 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	{
 		d += size;
 		s += size;
-		while (size--)
+		while (size-- > 0)
 			*(--d) = *(--s);
 	}
-	return ((void *)d);
+	return (origin_d);
 }
 
 // #include <stdio.h>
@@ -42,7 +44,18 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 // int	main(void)
 // {
 // 	char str[] = "memmove can be very useful......";
-// 	memmove(str + 20, str + 15, 11);
-// 	puts(str);
-// 	return (0);
+// 	char str2[] = "memmove can be very useful......";
+
+// 	printf("-----------------------------\n");
+// 	printf("%s\n", memmove(str + 20, str + 15, 11));
+// 	printf("%s\n", ft_memmove(str2 + 20, str2 + 15, 11));
+
+// 	printf("-----------------------------\n");
+// 	printf("%s\n", memmove(NULL ,NULL,0));
+// 	printf("%s\n", ft_memmove(NULL ,NULL,0));
+
+// 	printf("-----------------------------\n");
+// 	printf("%s\n", memmove(((void*)0), ((void*)0), 5));
+// 	printf("%s\n", ft_memmove(((void*)0), ((void*)0), 5));
+
 // }

@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:32:24 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 17:02:50 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:12:16 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

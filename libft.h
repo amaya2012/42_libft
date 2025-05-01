@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:20:52 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/30 18:07:13 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:09:57 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int					ft_toupper(int c);
 
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstnew(void *content);
+t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));

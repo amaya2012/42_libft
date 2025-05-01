@@ -6,11 +6,11 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:25:57 by amweyer           #+#    #+#             */
-/*   Updated: 2025/04/29 15:03:21 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/01 13:12:02 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
