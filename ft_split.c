@@ -39,57 +39,63 @@ static int	get_len_str(char const *s, char c, int start)
 	return (len - start);
 }
 
-static int	fill_array(char const *s, char c, char **array, int strs, int i)
+static int	fill_one_word(char const *s, char c, char **array, int strs, int i)
 {
-	int	j;
+	int	k;
 	int	len_str;
 
-	j = 0;
-	len_str = get_len_str(s, c, i) + 1;
+	len_str = get_len_str(s, c, i);
 	array[strs] = malloc((len_str + 1) * sizeof(char));
 	if (!array[strs])
 	{
+		k = 0;
+		while (k < strs)
+			free(array[k++]);
+		free(array);
+		return (-1);
 	}
 	ft_strlcpy(array[strs], &s[i], len_str + 1);
 	return (len_str);
 }
 
-static void	free_array(char **array, int strs)
+static int	fill_all_words(char const *s, char c, char **array, int nb_strs)
 {
-	int	j;
+	int	i;
+	int	strs;
+	int	len;
 
-	j = 0;
-	while (j < strs)
-		free(array[j++]);
-	free(array);
+	i = 0;
+	strs = 0;
+	while (s[i] && strs < nb_strs)
+	{
+		if (s[i] != c)
+		{
+			len = fill_one_word(s, c, array, strs, i);
+			if (len == -1)
+				return (0);
+			i += len;
+			strs++;
+		}
+		while (s[i] == c && s[i])
+			i++;
+	}
+	array[strs] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	int		nb_strs;
-	int		i;
-	int		strs;
 
 	if (!s)
 		return (NULL);
-	strs = 0;
-	i = 0;
 	nb_strs = get_nb_strs(s, c);
 	array = malloc((nb_strs + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			i += fill_array(s, c, array, strs, i);
-			strs++;
-		}
-		else
-			i++;
-	}
-	array[nb_strs] = NULL;
+	if (!fill_all_words(s, c, array, nb_strs))
+		return (NULL);
 	return (array);
 }
 
@@ -105,7 +111,7 @@ void	visualize_split(char **split_result)
 	}
 	while (split_result[i] != NULL)
 	{
-		printf("Mot %d: %s\n", i + 1, split_result[i]);
+		printf("%s\n", split_result[i]);
 		i++;
 	}
 }
@@ -114,9 +120,10 @@ void	visualize_split(char **split_result)
 
 int	main(void)
 {
-	printf("%d\n", get_nb_strs(" ceci   re     est     un test   ", ' '));
-	printf("%d\n", get_len_str("ceci re     est     un test   ", ' ', 6));
-	visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
-	visualize_split(ft_split("", ' '));
-	visualize_split(ft_split("                                ", ' '));
+	//printf("%d\n", get_nb_strs(" ceci   re     est     un test   ", ' '));
+	//printf("%d\n", get_len_str("ceci re     est     un test   ", ' ', 6));
+	// visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
+	visualize_split(ft_split("1234b        ", 'b'));
+	// visualize_split(ft_split(NULL,'a'));
+	// visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
 }
