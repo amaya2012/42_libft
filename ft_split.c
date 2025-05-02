@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:59:51 by amweyer           #+#    #+#             */
-/*   Updated: 2025/05/01 18:05:37 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/05/02 13:31:55 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,21 @@ static int	get_len_str(char const *s, char c, int start)
 	return (len - start);
 }
 
-static int	fill_one_word(char const *s, char c, char **array, int strs, int i)
+static void	free_array(char **array, int strs)
 {
 	int	k;
-	int	len_str;
 
-	len_str = get_len_str(s, c, i);
-	array[strs] = malloc((len_str + 1) * sizeof(char));
-	if (!array[strs])
-	{
-		k = 0;
-		while (k < strs)
-			free(array[k++]);
-		free(array);
-		return (-1);
-	}
-	ft_strlcpy(array[strs], &s[i], len_str + 1);
-	return (len_str);
+	k = 0;
+	while (k < strs)
+		free(array[k++]);
+	free(array);
 }
 
 static int	fill_all_words(char const *s, char c, char **array, int nb_strs)
 {
 	int	i;
 	int	strs;
-	int	len;
+	int	len_str;
 
 	i = 0;
 	strs = 0;
@@ -70,16 +61,20 @@ static int	fill_all_words(char const *s, char c, char **array, int nb_strs)
 	{
 		if (s[i] != c)
 		{
-			len = fill_one_word(s, c, array, strs, i);
-			if (len == -1)
+			len_str = get_len_str(s, c, i);
+			array[strs] = malloc((len_str + 1) * sizeof(char));
+			if (!array[strs])
+			{
+				free_array(array, strs);
 				return (0);
-			i += len;
+			}
+			ft_strlcpy(array[strs], &s[i], len_str + 1);
+			i += len_str;
 			strs++;
 		}
 		while (s[i] == c && s[i])
 			i++;
 	}
-	array[strs] = NULL;
 	return (1);
 }
 
@@ -96,34 +91,35 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (!fill_all_words(s, c, array, nb_strs))
 		return (NULL);
+	array[nb_strs] = NULL;
 	return (array);
 }
 
-void	visualize_split(char **split_result)
-{
-	int	i;
+// void	visualize_split(char **split_result)
+// {
+// 	int	i;
 
-	i = 0;
-	if (split_result == NULL)
-	{
-		printf("Erreur: Split échoué\n");
-		return ;
-	}
-	while (split_result[i] != NULL)
-	{
-		printf("%s\n", split_result[i]);
-		i++;
-	}
-}
+// 	i = 0;
+// 	if (split_result == NULL)
+// 	{
+// 		printf("Erreur: Split échoué\n");
+// 		return ;
+// 	}
+// 	while (split_result[i] != NULL)
+// 	{
+// 		printf("%s\n", split_result[i]);
+// 		i++;
+// 	}
+// }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	//printf("%d\n", get_nb_strs(" ceci   re     est     un test   ", ' '));
-	//printf("%d\n", get_len_str("ceci re     est     un test   ", ' ', 6));
-	// visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
-	visualize_split(ft_split("1234b        ", 'b'));
-	// visualize_split(ft_split(NULL,'a'));
-	// visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
-}
+// int	main(void)
+// {
+// 	// printf("%d\n", get_nb_strs(" ceci   re     est     un test   ", ' '));
+// 	// printf("%d\n", get_len_str("ceci re     est     un test   ", ' ', 6));
+// 	visualize_split(ft_split("    ce  ci re     est     un test   ", ' '));
+// 	// visualize_split(ft_split("1234b        ", 'b'));
+// 	//visualize_split(ft_split(" hello! ",' '));
+// 	//visualize_split(ft_split("cedfbfs", ' '));
+// }

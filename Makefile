@@ -6,7 +6,7 @@
 #    By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 13:09:41 by amweyer           #+#    #+#              #
-#    Updated: 2025/04/30 10:24:57 by amweyer          ###   ########.fr        #
+#    Updated: 2025/05/02 12:59:17 by amweyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC = 	ft_atoi.c\
 		ft_substr.c\
 		ft_tolower.c\
 		ft_toupper.c\
+		ft_split.c\
 
 
 BONUS_SRC = 	ft_lstadd_back_bonus.c\
